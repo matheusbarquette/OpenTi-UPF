@@ -19,9 +19,7 @@ PATH_CHROMEDRIVER = os.path.join(PATH_EXE, 'src\chromedriver.exe')
 service = Service(executable_path=PATH_CHROMEDRIVER)
 driver = webdriver.Chrome(service=service)
 
-driver.get('https://stackoverflow.com/questions/77143888/python-selenium-chrome-how-to-set-driver-location-in-selenium-4-12')
-# driver = webdriver.Chrome()
-exit()
+driver = webdriver.Chrome()
 #--------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -33,6 +31,7 @@ driver.get("https://www.example.com")
 
 # Clicar em um link
 driver.find_element(By.ID, 'element-id').click()
+driver.execute_script("arguments[0].click();", driver.find_element(By.ID, 'element-id'))
 
 # Voltar no histórico do navegador
 driver.back()
