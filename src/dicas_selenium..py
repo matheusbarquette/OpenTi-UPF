@@ -12,6 +12,8 @@ from selenium.webdriver.chrome.service import Service
 # Inicialização do WebDriver para o navegador Chrome
 # link chromedriver https://chromedriver.chromium.org/downloads, lembrando sempre de verificar a versao do navegador
 # OBS: versoes novas nao e necessario
+# https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/VERSAO/win64/chromedriver-win64.zip
+# https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.96/win64/chromedriver-win64.zip
 
 PATH_EXE = os.getcwd()
 PATH_CHROMEDRIVER = os.path.join(PATH_EXE, 'src\chromedriver.exe')
