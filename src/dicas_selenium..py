@@ -3,16 +3,25 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+import os 
+from selenium.webdriver.chrome.service import Service
+
 
 #--------------------------------------------------------------------------------------------------------------------------------
 # WebDriver: O ponto de partida do Selenium é instanciar um objeto WebDriver, que permite interagir com o navegador. Por exemplo:
 # Inicialização do WebDriver para o navegador Chrome
 # link chromedriver https://chromedriver.chromium.org/downloads, lembrando sempre de verificar a versao do navegador
 # OBS: versoes novas nao e necessario
-caminho_chromedriver = '/chromedriver.exe'
-driver = webdriver.Chrome(caminho_chromedriver)
 
-driver = webdriver.Chrome()
+PATH_EXE = os.getcwd()
+PATH_CHROMEDRIVER = os.path.join(PATH_EXE, 'src\chromedriver.exe')
+
+service = Service(executable_path=PATH_CHROMEDRIVER)
+driver = webdriver.Chrome(service=service)
+
+driver.get('https://stackoverflow.com/questions/77143888/python-selenium-chrome-how-to-set-driver-location-in-selenium-4-12')
+# driver = webdriver.Chrome()
+exit()
 #--------------------------------------------------------------------------------------------------------------------------------
 
 

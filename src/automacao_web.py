@@ -6,14 +6,15 @@ import os
 import time 
 from bs4 import BeautifulSoup as soup
 import pandas as pd 
+from selenium.webdriver.chrome.service import Service
 
 # # Caminho do chromedriver
 PATH_EXE = os.getcwd()
 DIR_BASES = os.path.join(PATH_EXE, 'bases')
 
-# PATH_CHROME_DRIVER = os.path.join(PATH_EXE, 'chromedriver.exe')
-# # Inicialize o navegador Chrome usando o ChromeDriver
-# driver = webdriver.Chrome(PATH_CHROME_DRIVER)
+# PATH_CHROMEDRIVER = os.path.join(PATH_EXE, 'src\chromedriver.exe')
+# service = Service(executable_path=PATH_CHROMEDRIVER)
+# driver = webdriver.Chrome(service=service)
 
 driver = webdriver.Chrome()
 
