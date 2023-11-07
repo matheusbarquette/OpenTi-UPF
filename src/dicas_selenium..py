@@ -14,14 +14,25 @@ from selenium.webdriver.chrome.service import Service
 # OBS: versoes novas nao e necessario
 # https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/VERSAO/win64/chromedriver-win64.zip
 # https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.96/win64/chromedriver-win64.zip
+# https://github.com/mozilla/geckodriver/releases/
 
+# automatico
+driver = webdriver.Firefox()
+driver.get("https://www.google.com.br/")
+
+# configurando chromedriver
 PATH_EXE = os.getcwd()
 PATH_CHROMEDRIVER = os.path.join(PATH_EXE, 'src\chromedriver.exe')
-
 service = Service(executable_path=PATH_CHROMEDRIVER)
 driver = webdriver.Chrome(service=service)
 
-driver = webdriver.Chrome()
+# firefox
+PATH_EXE = os.getcwd()
+PATH_CHROMEDRIVER = os.path.join(PATH_EXE, 'src\geckodriver.exe')
+service = Service(executable_path=PATH_CHROMEDRIVER)
+driver = webdriver.Firefox(service=service)
+driver.get("https://medium.com/@wmonteiro/executando-o-selenium-com-o-python-em-windows-c876bc60bf99")
+
 #--------------------------------------------------------------------------------------------------------------------------------
 
 
